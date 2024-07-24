@@ -1,16 +1,31 @@
-# M1-Analyse image
+# Image segmentation
 
-## Students
-- SEN Abdurrahman (p1510824)
-- DESBIAUX Arthur (p2006393)
-- VADUREL Benjamin (p2000154)
+The project aims to process segmentation on images and videos using [region growing](https://en.wikipedia.org/wiki/Region_growing).
+
+This project was realized in an image processing class during first year of Master Degree in computer science at University Lyon 1 Claude Bernard.
+
+## Project members
+- [SEN Abdurrahman](https://github.com/senabIsShort)
+- [DESBIAUX Arthur](https://github.com/adesbx)
+- [VADUREL Benjamin](https://github.com/Benjamin-Eldo)
+
+## Features
+
+- Seed planting
+- Region growing
+- Region merging
+- Worker system (for parallelization)
+
+## Used library
+
+- [OpenCV2](https://opencv.org/)
 
 ## Installation
 
-### Install script
-/!\ The install script only work on linux distrib.
+### Setup
+/!\ The install script only works on linux distrib.
 
-Once you pulled this GIT repository, you have to get into the project's root and execute the script ```install.sh```. It will download the opencv2 library and setup the development environnement for you.
+Once you pulled this GIT repository, you have to get to the project's root and execute the script ```install.sh```. It will download the opencv2 library and setup the development environnement for you.
 
 ```sh
 #In the project's root (sudo recommanded)
@@ -36,22 +51,22 @@ You'll get an executable named ```main``` that you can launch with :
 
 #### Parameters
 
-The application is using several parameters defined in ```Settings.hpp```.
+The application is using several parameters defined in ```src/Settings.hpp```.
 
-```INPUT_IMAGE_PATH``` : path to the folder where the image is  
-```INPUT_IMAGE_FILE``` : filename of the image
+```INPUT_IMAGE_PATH``` *(string)* : path to the folder where the image is  
+```INPUT_IMAGE_FILE``` *(string)* : filename of the image
 
-```INPUT_VIDEO_PATH``` : path to the folder where the video is  
-```INPUT_VIDEO_FILE``` : filename of the video
+```INPUT_VIDEO_PATH``` *(string)* : path to the folder where the video is  
+```INPUT_VIDEO_FILE``` *(string)* : filename of the video
 
-```NUMBER_OF_REGIONS``` : Number of seeds before region grow
+```NUMBER_OF_REGIONS``` *(int)*: Number of seeds before region grow
 
-```PIXEL_COLOR_SIMILARITY_THRESHOLD```: Define threshold used by the similitary criteria for the region growing
-```REGION_COLOR_SIMILARITY_THRESHOLD``` : Define threshold used by the similarity criteria for merging regions.
+```PIXEL_COLOR_SIMILARITY_THRESHOLD``` *(int)* : Define threshold used by the similitary criteria for the region growing
+```REGION_COLOR_SIMILARITY_THRESHOLD``` *(int)* : Define threshold used by the similarity criteria for merging regions.
 
-```MAX_FRAME_COMPUTED_AT_ONCE``` : Define the size of the thread pool when computing a video. (/!\ Increasing this parameter increases RAM/CPU consumption, be careful, increasing too much may cause performance issue !)
+```MAX_FRAME_COMPUTED_AT_ONCE``` *(int)* : Define the size of the thread pool when computing a video. (/!\ Increasing this parameter increases RAM/CPU consumption, be careful, increasing too much may cause performance issue !)
 
-```DRAW_ONLY_BORDERS```: If you want to show only the borders of the regions (true)
+```DRAW_ONLY_BORDERS``` *(bool)*:  If you want to show only the borders of the regions (true)
 
 ### Result
 
