@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project( main )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( main main.cpp headers/Pixel.hpp headers/ImageRegionGrowing.hpp headers/Region.hpp headers/RegionFactory.hpp headers/VideoRegionGrowing.hpp sources/ImageRegionGrowing.cpp sources/Pixel.cpp sources/Region.cpp sources/RegionFactory.cpp sources/VideoRegionGrowing.cpp headers/ImageUtil.hpp sources/ImageUtil.cpp headers/ImageProcessing/GrowthChamber.hpp sources/GrowthChamber.cpp headers/ImageProcessing/RegionMerger.hpp sources/RegionMerger.cpp)
+target_link_libraries( main ${OpenCV_LIBS} )
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")

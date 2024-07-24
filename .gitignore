@@ -1,0 +1,11 @@
+build/
+opencv/
+src/.vscode/
+src/main
+.vscode/
+src/CMakeFiles/
+src/*.cmake 
+src/CMakeCache.txt
+src/Makefile
+opencv.zip
+src/Samples/Videos/register.avi
